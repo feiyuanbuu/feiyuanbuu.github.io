@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Yue Wu | Personal Homepage</title>
   <meta name="description" content="Yue Wu's personal academic homepage: 3D generation, video generation, world models, and controllable aircraft generation." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
     :root {
       --bg: #ffffff;
@@ -378,7 +379,8 @@
     }
 
     .sidebar-links .pill {
-      display: block;
+      display: inline-flex;
+      align-items: center;
       width: auto;
       padding: 3px 0;
       border: 0;
@@ -390,7 +392,17 @@
       line-height: 1.45;
     }
 
-    .sidebar-links .pill:hover {
+    .sidebar-links .pill i {
+      width: 18px;
+      margin-right: 8px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-align: center;
+      transition: color 0.2s ease;
+    }
+
+    .sidebar-links .pill:hover,
+    .sidebar-links .pill:hover i {
       color: var(--accent);
       text-decoration: none;
     }
@@ -769,12 +781,12 @@
         <img src="assets/profile.jpg" alt="Yue Wu" style="width:100%;height:100%;object-fit:cover;object-position:60% center;" />
       </div>
       <div class="quick-links sidebar-links" aria-label="External links">
-        <a class="pill" href="mailto:wy20001208@gmail.com">Email</a>
+        <a class="pill" href="mailto:wy20001208@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>Email</span></a>
         <!-- <a class="pill" href="#">Google Scholar</a> -->
-        <a class="pill" href="https://github.com/feiyuanbuu" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="pill" href="files/cv_Yue_Wu_en.pdf" target="_blank" rel="noopener noreferrer">CV</a>
-        <a class="pill" href="#projects">Research Projects</a>
-        <a class="pill" href="https://www.linkedin.com/in/yue-wu-b95717342/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="pill" href="https://github.com/feiyuanbuu" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+        <a class="pill" href="files/cv_Yue_Wu_en.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i><span>CV</span></a>
+        <a class="pill" href="#projects"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span>Research Projects</span></a>
+        <a class="pill" href="https://www.linkedin.com/in/yue-wu-b95717342/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
       </div>
       <nav class="sidebar-nav" aria-label="Main navigation">
         <a href="#bio">Biography</a>
