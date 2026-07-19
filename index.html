@@ -299,48 +299,494 @@
       .nav-links { flex-wrap: wrap; gap: 12px; }
       .news-list li { grid-template-columns: 1fr; gap: 2px; }
     }
+
+    /* Reference-inspired academic profile layout */
+    body {
+      padding: 60px;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .page-shell {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 260px minmax(0, 750px);
+      column-gap: 70px;
+      align-items: start;
+    }
+
+    .profile-sidebar {
+      width: 260px;
+      position: sticky;
+      top: 60px;
+      align-self: start;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .profile-sidebar h1 {
+      margin: 0 0 4px;
+      font-size: 28px;
+      line-height: 1.3;
+      letter-spacing: -0.035em;
+    }
+
+    .profile-sidebar .brand {
+      color: var(--text);
+      font-size: inherit;
+    }
+
+    .profile-sidebar .brand:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .profile-sidebar .eyebrow {
+      margin: 0 0 8px;
+      font-size: 0.72rem;
+      line-height: 1.5;
+      letter-spacing: 0.055em;
+    }
+
+    .profile-sidebar .subtitle {
+      margin: 0 0 12px;
+      max-width: none;
+      color: var(--muted);
+      font-family: "Times New Roman", Times, serif;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .profile-sidebar .portrait {
+      width: 100%;
+      height: 220px;
+      margin: 14px 0;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.10);
+    }
+
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      margin: 14px 0 0;
+    }
+
+    .sidebar-links .pill {
+      display: block;
+      width: auto;
+      padding: 3px 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    .sidebar-links .pill:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px 12px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    .sidebar-nav a {
+      color: var(--muted);
+    }
+
+    .sidebar-nav a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .profile-sidebar .theme-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      padding: 4px 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .profile-sidebar .theme-btn::before {
+      content: "";
+      width: 36px;
+      height: 20px;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 10px 50%, var(--card) 0 6px, transparent 7px),
+        var(--line);
+      box-shadow: inset 0 0 0 1px var(--line);
+    }
+
+    html[data-theme="dark"] .profile-sidebar .theme-btn::before {
+      background:
+        radial-gradient(circle at 26px 50%, var(--bg) 0 6px, transparent 7px),
+        var(--accent);
+      box-shadow: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html[data-theme="auto"] .profile-sidebar .theme-btn::before {
+        background:
+          radial-gradient(circle at 18px 50%, var(--bg) 0 6px, transparent 7px),
+          var(--accent);
+        box-shadow: none;
+      }
+    }
+
+    .content-column {
+      min-width: 0;
+      width: 100%;
+      max-width: 750px;
+    }
+
+    .content-main > section {
+      padding: 0;
+      scroll-margin-top: 20px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 44px 0 18px;
+      padding: 0 0 8px 12px;
+      border-bottom: 1px solid var(--section-line);
+      border-left: 2px solid var(--accent);
+    }
+
+    .content-main > section:first-child .section-title {
+      margin-top: 4px;
+    }
+
+    h2 {
+      font-size: 20px;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .card {
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .bio {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .news-list li {
+      grid-template-columns: 82px minmax(0, 1fr);
+      gap: 8px;
+      margin: 0 0 9px;
+      padding: 0;
+      border: 0;
+      font-size: 0.91rem;
+      line-height: 1.65;
+    }
+
+    .news-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .date {
+      align-self: start;
+      width: max-content;
+      padding: 1px 6px;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      background: var(--bg-soft);
+      color: var(--muted);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .pub,
+    .project {
+      grid-template-columns: 128px minmax(0, 1fr);
+      gap: 16px;
+      margin: 0 0 20px;
+      padding: 14px 16px;
+      border: 1px solid transparent;
+      border-left: 2px solid transparent;
+      border-radius: 6px;
+      background: var(--bg-soft);
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+      transition: border-left-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .pub:hover,
+    .project:hover {
+      border-left-color: var(--accent);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.10);
+    }
+
+    .pub:last-child,
+    .project:last-child {
+      margin-bottom: 0;
+    }
+
+    .thumb {
+      min-height: 100px;
+      border-radius: 6px;
+      font-size: 0.86rem;
+    }
+
+    .item-title {
+      font-size: 0.94rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .venue {
+      margin: 0 0 6px;
+      font-size: 0.84rem;
+    }
+
+    .authors {
+      margin: 0 0 6px;
+      font-size: 0.88rem;
+    }
+
+    .desc {
+      margin: 0 0 8px;
+      font-size: 0.91rem;
+      line-height: 1.65;
+    }
+
+    .pub .quick-links,
+    .project .quick-links {
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .content-main .pill {
+      padding: 2px 8px;
+      border-radius: 3px;
+      background: var(--bg);
+      box-shadow: none;
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .tag-row {
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      padding: 2px 8px;
+      font-size: 0.73rem;
+    }
+
+    .two-col {
+      display: block;
+    }
+
+    .two-col > .card {
+      margin: 0 0 14px;
+      padding: 0 0 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .two-col > .card:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .compact-list {
+      margin-top: 5px;
+      padding-left: 19px;
+      font-size: 0.91rem;
+    }
+
+    .compact-list li {
+      margin: 4px 0;
+    }
+
+    .footer {
+      margin-top: 36px;
+      padding: 24px 0 0;
+      border-top: 1px solid var(--line);
+      font-size: 0.75rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+    }
+
+    @media (max-width: 960px) {
+      body {
+        padding: 40px;
+      }
+
+      .page-shell {
+        display: block;
+      }
+
+      .profile-sidebar {
+        position: static;
+        width: auto;
+        max-width: 750px;
+        margin: 0 auto 34px;
+        text-align: center;
+      }
+
+      .profile-sidebar .subtitle {
+        max-width: 620px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .profile-sidebar .portrait {
+        width: 180px;
+        height: 180px;
+        margin: 12px auto;
+      }
+
+      .sidebar-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px 20px;
+      }
+
+      .sidebar-nav {
+        justify-content: center;
+      }
+
+      .profile-sidebar .theme-btn {
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .content-column {
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 25px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      .pub,
+      .project {
+        grid-template-columns: 1fr;
+      }
+
+      .thumb {
+        min-height: 82px;
+      }
+
+      .news-list li {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 16px;
+        font-size: 14px;
+      }
+
+      .profile-sidebar h1 {
+        font-size: 26px;
+      }
+
+      .profile-sidebar .portrait {
+        width: 140px;
+        height: 140px;
+      }
+
+      .section-title {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 3px;
+      }
+    }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav wrap" aria-label="Main navigation">
-      <a class="brand" href="#home">Yue Wu</a>
-      <div class="nav-links">
+  <div class="page-shell" id="home">
+    <aside class="profile-sidebar" aria-label="Profile and navigation">
+      <h1><a class="brand" href="#home">Yue Wu</a></h1>
+      <p class="eyebrow">3D Generation · Video Generation · World Models</p>
+      <p class="subtitle">
+        M.S. student in Computer Technology at Huazhong University of Science and Technology.
+        <!-- My research focuses on controllable 3D generation, long-term consistent video generation,
+        and 3D memory for interactive world modeling. -->
+      </p>
+      <div class="portrait" aria-label="Profile photo">
+        <img src="assets/profile.jpg" alt="Yue Wu" style="width:100%;height:100%;object-fit:cover;object-position:60% center;" />
+      </div>
+      <div class="quick-links sidebar-links" aria-label="External links">
+        <a class="pill" href="mailto:wy20001208@gmail.com">Email</a>
+        <!-- <a class="pill" href="#">Google Scholar</a> -->
+        <a class="pill" href="https://github.com/feiyuanbuu" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="pill" href="files/cv_Yue_Wu_en.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+        <a class="pill" href="#projects">Research Projects</a>
+        <a class="pill" href="https://www.linkedin.com/in/yue-wu-b95717342/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+      <nav class="sidebar-nav" aria-label="Main navigation">
         <a href="#bio">Biography</a>
         <a href="#news">News</a>
         <a href="#publications">Publications</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
         <!-- <a href="#contact">Contact</a> -->
-        <button class="theme-btn" id="themeToggle" type="button">Auto</button>
-      </div>
-    </nav>
-  </header>
+      </nav>
+      <button class="theme-btn" id="themeToggle" type="button">Auto</button>
+    </aside>
 
-  <main class="wrap" id="home">
-    <section class="hero">
-      <div class="portrait" aria-label="Profile photo">
-        <img src="assets/profile.jpg" alt="Yue Wu" style="width:100%;height:100%;object-fit:cover;object-position:60% center;" />
-      </div>
-      <div>
-        <p class="eyebrow">3D Generation · Video Generation · World Models</p>
-        <h1>Yue Wu</h1>
-        <p class="subtitle">
-          M.S. student in Computer Technology at Huazhong University of Science and Technology.
-          My research focuses on controllable 3D generation, long-term consistent video generation,
-          and 3D memory for interactive world modeling.
-        </p>
-        <div class="quick-links" aria-label="External links">
-          <a class="pill" href="mailto:wy20001208@gmail.com">Email</a>
-          <!-- <a class="pill" href="#">Google Scholar</a> -->
-          <a class="pill" href="https://github.com/feiyuanbuu" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a class="pill" href="files/cv_Yue_Wu_en.pdf" target="_blank" rel="noopener noreferrer">CV</a>
-          <a class="pill" href="#projects">Research Projects</a>
-          <a class="pill" href="https://www.linkedin.com/in/yue-wu-b95717342/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
-      </div>
-    </section>
-
+    <div class="content-column">
+      <main class="content-main">
     <section id="bio">
       <div class="section-title">
         <h2>Biography</h2>
@@ -518,14 +964,16 @@
         </div>
       </div>
     </section> -->
-  </main>
+      </main>
 
-  <footer class="footer">
-    <div class="wrap footer-content">
+      <footer class="footer">
+        <div class="footer-content">
       <span>© <span id="year"></span> Yue Wu. Last updated: July 2026.</span>
       <span>Built as a lightweight static academic homepage.</span>
+        </div>
+      </footer>
     </div>
-  </footer>
+  </div>
 
   <script>
     const root = document.documentElement;
